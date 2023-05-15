@@ -1,7 +1,8 @@
+extern crate ferris_says;
 use ferris_says::say;
 
-// extern crate ferris_says;
 use std::{
+    fmt::write,
     fmt::Display,
     io::{stdout, BufWriter},
 };
@@ -9,7 +10,7 @@ use std::{
 fn main() {
     //! This line goes to doc
     //! Second doc line
-    println!("{} days", 31);
+    println!("days {}", 31);
     let stdout = stdout();
     let message = String::from("Hello fellow Rustaceans!");
     let width = message.chars().count();
@@ -17,5 +18,5 @@ fn main() {
     let mut writer = BufWriter::new(stdout.lock());
     say(message.as_bytes(), width, &mut writer).unwrap();
 
-    Display!(make_string(927, "label"))
+    Display(make_string(927, "label"))
 }
